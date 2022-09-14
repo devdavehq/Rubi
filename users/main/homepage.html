@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../others/css/all.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/home-page.css">
+    <link rel="shortcut icon" href="../others/rubyimgs/images (7).jpeg" type="image/x-icon">
+    <title>rubi's homepage</title>
+    <style>
+
+        @media(max-width: 980px) {
+        #hero-sect{
+            width: 100%;
+            height: 90vh;
+            background: transparent;
+            position: relative;
+        }
+        #hero-sect .video{
+            position: absolute;
+            top: 0;
+            width: inherit;
+            height: inherit;
+            pointer-events: none;
+            object-fit: contain;
+            object-position: right;
+        }
+        .popular{
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .video-bx{
+            width: 250px;
+        }
+    }
+        @media(max-width: 728px) {
+        .follow-rubi .rubi-img{
+            position: relative;
+            width: 70px;
+            height: 70px;
+            border-radius: 10px;
+            background-color: grey;
+            box-shadow: var(--shadow);
+            margin-left: 10px;
+        }
+        .follow-rubi .rubi-img img{
+            position: absolute;
+            width: inherit;
+            height: inherit;
+            border-radius: inherit;
+            top: -5%;
+            left: 5%;
+            transition: 0.5s ease;
+        }
+        .follow-rubi .rubi-img img:hover{
+            top: 0;
+            left: 0;
+        }
+        .follow-rubi .cname{
+            font-size: 20px;
+            font-family: sans-serif;
+            font-weight: bold;
+            margin-left: 20px;
+            margin-bottom: 80px;
+            color: var(--dark);
+            
+        }
+        .follow-rubi .cname i{font-size: 10px;color: var(--blue);}
+        .follow-rubi #follow-btn{
+            font-size: 20px;
+            color: var(--white);
+            padding: 5px 15px 5px 15px;
+            background: var(--primary-color);
+            font-family: sans-serif;
+            position: absolute;
+            right: 5%;
+            border-radius: 10px;
+        }
+        .subs p{
+            font-size: 15px;
+            color: var(--grey);
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        .popular{
+            grid-template-columns: repeat(1, 1fr);
+        }
+        .logo-nav{
+            justify-content: space-evenly;
+        }
+        .logo-nav .search{
+            display: none;
+        }
+        .video-bx{
+            width: 390px;
+        }
+        #hero-sect .video{
+            position: absolute;
+            top: 0;
+            width: inherit;
+            height: inherit;
+            pointer-events: none;
+            object-fit: contain;
+            object-position: right;
+        }
+    }
+    /* @media(max-width: 350px) {
+        .video-bx{
+            width: 300px;
+        }
+    } */
+    
+    @media(max-width: 350px) {
+        #hero-sect{
+            width: 100%;
+            height: 90vh;
+            background: transparent;
+            position: relative;
+        }
+        #hero-sect .video{
+            position: absolute;
+            top: 0;
+            width: inherit;
+            height: inherit;
+            pointer-events: none;
+            object-fit: contain;
+            object-position: right;
+        }
+        .popular{
+            grid-template-columns: repeat(1, 1fr);
+        }
+        .video-bx{
+            width: 300px;
+        }
+
+        .follow-rubi .cname{
+            font-size: 15px;
+            font-family: sans-serif;
+            font-weight: bold;
+            margin-left: 20px;
+            margin-bottom: 80px;
+            color: var(--dark);
+            
+        }
+        .follow-rubi .cname i{font-size: 10px;color: var(--blue);}
+        .follow-rubi #follow-btn{
+            font-size: 15px;
+            color: var(--white);
+            padding: 5px 10px 5px 10px;
+            background: var(--primary-color);
+            font-family: sans-serif;
+            position: absolute;
+            right: 5%;
+            border-radius: 10px;
+        }
+        .subs p{
+            font-size: 10px;
+            color: var(--grey);
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+    }
+    @media (min-width: 2300px) {
+        .popular{
+            grid-template-columns: repeat(8, 1fr);
+        }
+    }
+   
+    </style>
+</head>
+<body>
+    <base href="homepage.html">
+    <section id="hero-sect">
+
+        <video src="../others/rubyimgs/rubi's gat your back always (1).mp4"  class="video" autoplay loop muted></video>
+
+    <nav id="top-Nav">
+        <div class="logo-nav">
+            <a href=""><img src="../others/rubyimgs/images (7).jpeg" alt="">rubi</a>
+                <div class="search">
+                    <form action="">
+                        <input type="text" id="top-input">
+                        <button class="search-btn"><i class="fa fa-search" id="top-search"></i></button>
+                    </form>
+                </div>
+        </div>
+        <ul>
+            <li><i class="fa fa-sun"></i></li>
+            <li><a href="">creators</a></li>
+            <li><div><img src="../others/rubyimgs/images (5).jpeg" alt=""></div></li>
+            <li><i class="fa fa-align-right" id="nav-pop"></i></li>
+        </ul>
+    </nav>
+
+    <div class="side-nav">
+        <a href="" class="logo"><img src="../others/rubyimgs/images (7).jpeg" alt="">rubi</a>
+        <div class="pages">
+            <ul>
+                <a href=""><i class="fa fa-home active"></i><li class="active">home</li></a>
+                <a href=""><i class="fa fa-cubes"></i><li>all</li></a>
+                <a href=""><i class="fa fa-question"></i><li>Q&A</li></a>
+                <a href=""><i class="fa fa-question-circle"></i><li>fAQ</li></a>
+            </ul>
+        </div>
+        <!-- <ul class="following">
+
+        </ul> -->
+        <div class="recommended">
+            <h1>recommended</h1>
+            <div class="channels">
+                <div class="ch-prof"></div>
+                <span>Rubi<i class="fa fa-check-circle"></i></span>
+                <a href="">follow</a>
+            </div>
+            <div class="channels">
+                <div class="ch-prof"></div>
+                <span>Rubi<i class="fa fa-check-circle"></i></span>
+                <a href="">follow</a>
+            </div>
+            <div class="channels">
+                <div class="ch-prof"></div>
+                <span>Rubi<i class="fa fa-check-circle"></i></span>
+                <a href="">follow</a>
+            </div>
+
+        </div>
+        <div class="following">
+            <h1>following</h1>
+            <div class="channels">
+                <div class="ch-prof"></div>
+                <span>Rubi<i class="fa fa-check-circle"></i></span>
+                <a href="">follow</a>
+            </div>
+            <div class="channels">
+                <div class="ch-prof"></div>
+                <span>Rubi<i class="fa fa-check-circle"></i></span>
+                <a href="">follow</a>
+            </div>
+            <div class="channels">
+                <div class="ch-prof"></div>
+                <span>Rubi<i class="fa fa-check-circle"></i></span>
+                <a href="">follow</a>
+            </div>
+            <div class="channels">
+                <div class="ch-prof"></div>
+                <span>Rubi<i class="fa fa-check-circle"></i></span>
+                <a href="">follow</a>
+            </div>
+        </div>
+        <div class="foot">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Laborum vitae id dignissimos eos laudantium reprehenderit officiis quia animi nisi sint.</p>
+                <span>copyright &copy; prototype.inc 2022</span>
+        </div>
+    </div>
+
+</section>
+    <div class="follow-rubi">
+        <div class="rubi-img">
+            <img src="../others/rubyimgs/images (7).jpeg" alt="">
+        </div>
+        <span><a href="" class="cname">Rubi Channel<i class="fa fa-check-circle"></i></a> 
+            <div class="subs"><p>subscribers 10M</p></div>
+        </span>
+        <a href="" id="follow-btn">follow</a>
+    </div>
+    <div class="popular">
+        <div class="video-bx">
+            <img src="../others/rubyimgs/renato-ramos-puma-dX5cNunLSYs-unsplash.jpg" alt="" class="thumbnail">
+            <a href="" class="v-title">how to create a facebook clone <p class='duration'>2 minutes ago</p></a>
+            <div class="v-prof">
+                <img src="../others/rubyimgs/renato-ramos-puma-k-5m08mzB0c-unsplash.jpg" alt="">
+                <span>code available</span>
+            </div>
+        </div>
+        <div class="video-bx">
+            <img src="../others/rubyimgs/renato-ramos-puma-dX5cNunLSYs-unsplash.jpg" alt="" class="thumbnail">
+            <a href="" class="v-title">how to create a facebook clone <p class='duration'>2 minutes ago</p></a>
+            <div class="v-prof">
+                <img src="../others/rubyimgs/renato-ramos-puma-k-5m08mzB0c-unsplash.jpg" alt="">
+                <span>code available</span>
+            </div>
+        </div>
+        <div class="video-bx">
+            <img src="../others/rubyimgs/renato-ramos-puma-dX5cNunLSYs-unsplash.jpg" alt="" class="thumbnail">
+            <a href="" class="v-title">how to create a facebook clone <p class='duration'>2 minutes ago</p></a>
+            <div class="v-prof">
+                <img src="../others/rubyimgs/renato-ramos-puma-k-5m08mzB0c-unsplash.jpg" alt="">
+                <span>code available</span>
+            </div>
+        </div>
+        <div class="video-bx">
+            <img src="../others/rubyimgs/renato-ramos-puma-dX5cNunLSYs-unsplash.jpg" alt="" class="thumbnail">
+            <a href="" class="v-title">how to create a facebook clone <p class='duration'>2 minutes ago</p></a>
+            <div class="v-prof">
+                <img src="../others/rubyimgs/renato-ramos-puma-k-5m08mzB0c-unsplash.jpg" alt="">
+                <span>code available</span>
+            </div>
+        </div>
+        <div class="video-bx">
+            <img src="../others/rubyimgs/renato-ramos-puma-dX5cNunLSYs-unsplash.jpg" alt="" class="thumbnail">
+            <a href="" class="v-title">how to create a facebook clone <p class='duration'>2 minutes ago</p></a>
+            <div class="v-prof">
+                <img src="../others/rubyimgs/renato-ramos-puma-k-5m08mzB0c-unsplash.jpg" alt="">
+                <span>code available</span>
+            </div>
+        </div>
+        <div class="video-bx">
+            <img src="../others/rubyimgs/renato-ramos-puma-dX5cNunLSYs-unsplash.jpg" alt="" class="thumbnail">
+            <a href="" class="v-title">how to create a facebook clone <p class='duration'>2 minutes ago</p></a>
+            <div class="v-prof">
+                <img src="../others/rubyimgs/renato-ramos-puma-k-5m08mzB0c-unsplash.jpg" alt="">
+                <span>code available</span>
+            </div>
+        </div>
+        <div class="video-bx">
+            <img src="../others/rubyimgs/renato-ramos-puma-dX5cNunLSYs-unsplash.jpg" alt="" class="thumbnail">
+            <a href="" class="v-title">how to create a facebook clone <p class='duration'>2 minutes ago</p></a>
+            <div class="v-prof">
+                <img src="../others/rubyimgs/renato-ramos-puma-k-5m08mzB0c-unsplash.jpg" alt="">
+                <span>code available</span>
+            </div>
+        </div>
+        <div class="video-bx">
+            <img src="../others/rubyimgs/renato-ramos-puma-dX5cNunLSYs-unsplash.jpg" alt="" class="thumbnail">
+            <a href="" class="v-title">how to create a facebook clone <p class='duration'>2 minutes ago</p></a>
+            <div class="v-prof">
+                <img src="../others/rubyimgs/renato-ramos-puma-k-5m08mzB0c-unsplash.jpg" alt="">
+                <span>code available</span>
+            </div>
+        </div>
+    </div>
+    <script src="../js/script.js"></script>
+    <script>
+        let navPop = document.querySelector('#nav-pop')
+        let sideNav = document.querySelector('.side-nav')
+        let body = document.querySelector('body')
+        let topnav = document.querySelector('#top-Nav')
+
+        navPop.addEventListener('click', ()=>{
+            if(sideNav.style.left === '-100vw'){
+                sideNav.style.left = '0'
+            }else{
+                sideNav.style.left = '-100vw'
+            }
+        })
+        // console.log(window.innerWidth);
+        window.onscroll = ()=>{
+            topnav.classList.toggle('stick', window.scrollY > 0)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../others/css/all.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="shortcut icon" href="../others/rubyimgs/images (7).jpeg" type="image/x-icon">
+    <title>Rubi</title>
+</head>
+<body>
+    <base href="index.html">
+    <div class="wrapper">
+        <nav id="top-Nav">
+            <div class="logo-nav">
+                <a href=""><img src="../others/rubyimgs/images (7).jpeg" alt="">rubi</a>
+                    <div class="search">
+                        <form action="">
+                            <input type="text" id="top-input">
+                            <button class="search-btn"><i class="fa fa-search" id="top-search"></i></button>
+                        </form>
+                    </div>
+            </div>
+            <ul>
+                    <li><i class="fa fa-sun"></i></li>
+                <li><a href="">creators</a></li>
+                <li><div><img src="../others/rubyimgs/images (5).jpeg" alt=""></div></li>
+                <li><i class="fa fa-align-right" id="nav-pop"></i></li>
+            </ul>
+        </nav>
+            
+
+        <img src="../others/rubyimgs/images (5).jpeg" alt="" id="hero">
+                <div class="typed">
+                    <h1>Rubi's got your back with<br>
+                        <span class="type">your code problems</span>
+                    </h1>
+                </div>
+
+                <div class="cilck-toreg-log">
+                    <a href="" id="reg">register</a>
+                    <p>or</p>
+                    <a href="" id="log">login</a>
+                </div>
+
+                <div class="register">
+                    <form action="" id="register" class="formr">
+                        <h1>create account ~</h1>
+                        <div class="input-fields">
+                            <input type="text" name="username" id="user" placeholder="enter username">
+                        </div>
+                        <div class="input-fields">
+                            <input type="email" name="email" id="emailr" placeholder="enter email">
+                        </div>
+                        <div class="input-fields pass">
+                            <input type="password" name="password" id="passr" placeholder="enter password">
+                           
+                        </div>
+                        <div class="link">already have account?<a href="" id="bring-log-link">login</a></div>
+                        <div class="input-button">
+                            <input type="submit" value="create account">
+                        </div>
+                    </form>
+                </div>
+                <div class="login">
+                    <form action="" id="login" class="form">
+                        <h1>login ~</h1>
+                        <div class="input-fields">
+                            <input type="email" name="email" id="emailL" placeholder="enter email">
+                        </div>
+                        <div class="input-fields pass">
+                            <input type="password" name="password" id="passl" placeholder="enter password">
+                            
+                        </div>
+                        <div class="link">don't have account?<a href="" id="bring-reg-link">register</a></div>
+                        <div class="input-button">
+                            <input type="submit" value="login">
+                        </div>
+                    </form>
+                </div>
+        <footer id="footer">copyright &copy; prototype.inc 2022</footer>
+    </div>
+   <script src="../js/script.js"></script>
+    <script src="../others/lib/typed.js"></script>
+    <script src="../others/lib/typed.min.js.map"></script>
+    <script>
+        var typed = new typed('.type',{
+            strings: ['ypur coding problems', 'your uiux problems', 'all with ruby'],
+            typeSpeed: 150,
+            backSpeed: 150,
+            loop: true
+        });
+    </script>
+</body>
+</html>
