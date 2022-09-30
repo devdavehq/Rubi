@@ -68,3 +68,5 @@
 
 <!-- CUSTOM JS -->
 <script src="../../assets/js/custom.js"></script>
+
+<script src="../../assets/js/widget.js"></script>

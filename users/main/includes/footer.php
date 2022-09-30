@@ -9,6 +9,8 @@
 
 <!-- Sticky js -->
 <script src="../../assets/js/sticky.js"></script>
+<script src="../../assets/js/sweet.js"></script>
+<script src="../../assets/js/sweet-alert.js"></script>
 
 <!-- CHART-CIRCLE JS-->
 <script src="../../assets/js/circle-progress.min.js"></script>

@@ -52,12 +52,12 @@
                         <div class="row">
                                 <div class="col-xl-3 col-md-6">
                                     <div class="card">
-                                        <img class="card-img-top" src=../../media/rubyimgs/arnold-francisca-f77Bh3inUpE-unsplash.jpg" alt="Title">
+                                        <img class="card-img-top" src="../../media/rubyimgs/arnold-francisca-f77Bh3inUpE-unsplash.jpg" alt="Title">
                                         <div class="card-body">
                                             <h4 class="card-title text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas a.</h4>
                                     
                                             <div class="d-flex">
-                                                <img src=../../media/rubyimgs/walkator-klMii3cR9iI-unsplash.jpg" alt="" class="rounded" width="40px" height="40px">
+                                                <img src="../../media/rubyimgs/walkator-klMii3cR9iI-unsplash.jpg" alt="" class="rounded" width="40px" height="40px">
                                                 <a href='' class="text-light mt-3 creator">aaron schultz</a>
                                             </div>
                                             <a  href='' class="card-title btn btn-primary mt-2 increase" data-bs-toggle="modal" data-bs-target="#extralargemodal">
@@ -77,10 +77,6 @@
                                 <?php include_once  'includes/modal.php'; ?>
 
                         </div>
-                    
-                       
-                       
-                    
                     </div>
                     <!-- CONTAINER END -->
                 </div>
@@ -94,6 +90,11 @@
 
     <!-- JQUERY JS -->
     <?php include_once  'includes/footer.php'; ?>
-</body>
 
+    <script>
+
+
+
+    </script>
+</body>
 </html>

@@ -93,7 +93,7 @@
                                                 <div class="notifications-menu">
                                                     <a class="dropdown-item d-flex" href="notify-list.php">
         
-                                                        <img src="../../others/rubyimgs/dell-LXI5kqCdEcE-unsplash.jpg" class="img-fluid" style='width:40px;
+                                                        <img src="../../media/rubyimgs1/images (3).jpeg" class="img-fluid" style='width:40px;
                                                          height:40px;border-radius:50px';
                                                         >
                                                     <!-- </div> -->
@@ -125,7 +125,7 @@
                                                 <div class="notifications-menu">
                                                     <a class="dropdown-item d-flex" href="notify-list.php">
         
-                                                            <img src="../../others/rubyimgs/dell-LXI5kqCdEcE-unsplash.jpg" class="img-fluid" style='width:40px;
+                                                            <img src="../../media/rubyimgs1/images (3).jpeg" class="img-fluid" style='width:40px;
                                                              height:40px;border-radius:50px';
                                                             >
                                                         <!-- </div> -->
@@ -146,29 +146,20 @@
                                                 <img src="../../assets/images/users/21.jpg" alt="profile-user"
                                                     class="avatar profile-user brround cover-image" />
                                             </a>
-                                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                                                <div class="drop-heading">
-                                                    <div class="text-center">
-                                                        <h5 class="text-dark mb-0 fs-14 fw-semibold">
-                                                            Percy Kewshun
-                                                        </h5>
-                                                        <small class="text-muted">Senior Admin</small>
+                                                <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                                    <div class="drop-heading">
+                                                        <div class="text-center">
+                                                            <h5 class="text-dark mb-0 fs-14 fw-semibold">
+                                                                Percy Kewshun
+                                                            </h5>
+                                                            <small class="text-muted">Senior Admin</small>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="dropdown-divider m-0"></div>
-                                                <a class="dropdown-item" href="profile.php">
-                                                    <i class="dropdown-icon fe fe-user"></i> Profile
-                                                </a>
-                                                <a class="dropdown-item" href="../../../creators/main/index.php">
-                                                    <i class="dropdown-icon fa fa-qq"></i> channel
-                                                </a>
-                                                <a class="dropdown-item" href="lockscreen.php">
-                                                    <i class="dropdown-icon fe fe-lock"></i> Lockscreen
-                                                </a>
-                                                <a class="dropdown-item" href="login.php">
-                                                    <i class="dropdown-icon fe fe-alert-circle"></i>
-                                                    Sign out
-                                                </a>
+                                                    <div class="dropdown-divider m-0"></div>
+                                                        <a class="dropdown-item" href="login.php">
+                                                            <i class="dropdown-icon fe fe-alert-circle"></i>
+                                                            Sign out
+                                                     </a>
                                             </div>
                                         </div>
                                     </div>

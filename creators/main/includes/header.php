@@ -92,6 +92,7 @@
        font-size: 20px;
        padding: 5px;
    }
+
 </style>
 <body class="app sidebar-mini ltr light-mode">
     <!-- GLOBAL-LOADER -->

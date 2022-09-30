@@ -8,7 +8,7 @@
                                                     </button>
                                             </div>
                                             <div class="modal-body">
-                                                <video src="../../others/rubyimgs/rubi's gat your back always (1).mp4" controls class="img-fluid"></video>
+                                                <video src="../../media/rubyimgs/rubi's gat your back always (1).mp4" controls class="img-fluid"></video>
                                                 
                                                 <div class="card text-start">
                                                     <div class="card-body d-flex reaction">
@@ -20,7 +20,7 @@
                                                     </div>
                                                     <div class="card-body d-flex Subscriptions">
                                                         <div class="d-flex">
-                                                            <img src="../../others/rubyimgs/walkator-klMii3cR9iI-unsplash.jpg" alt="" class="rounded" width="70px" height="70px">
+                                                            <img src="../../media/rubyimgs/walkator-klMii3cR9iI-unsplash.jpg" alt="" class="rounded" width="70px" height="70px">
                                                             <div class="d-flex subs">
                                                                 <a href='' class="text-light mt-3 creator-name">aaron schultz<i class="fa fa-check-circle text-primary verified"></i></a>
                                                                 <p class="text-default">subscribers 10M</p>

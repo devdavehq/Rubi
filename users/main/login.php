@@ -57,10 +57,11 @@
 
                 <div class="container-login100">
                     <div class="wrap-login100 p-6">
-                        <form class="login100-form validate-form">
+                        <form class="login100-form validate-form" id="form-master">
                             <span class="login100-form-title pb-5">
                                 Login
                             </span>
+                            <span id="all-err" style="color: red"></span>
                             <div class="panel panel-primary">
                                 <div class="tab-menu-heading">
                                     <div class="tabs-menu1">
@@ -77,21 +78,21 @@
                                                 <a href="javascript:void(0)" class="input-group-text bg-white text-muted">
                                                     <i class="zmdi zmdi-email text-muted" aria-hidden="true"></i>
                                                 </a>
-                                                <input class="input100 border-start-0 form-control ms-0" type="email" placeholder="Email">
+                                                <input class="input100 border-start-0 form-control ms-0" type="email" placeholder="Email" name="email" id="email">
                                             </div>
+                                            <span id="email-err" style="color: red"></span>
                                             <div class="wrap-input100 validate-input input-group" id="Password-toggle">
                                                 <a href="javascript:void(0)" class="input-group-text bg-white text-muted">
                                                     <i class="zmdi zmdi-eye text-muted" aria-hidden="true"></i>
                                                 </a>
-                                                <input class="input100 border-start-0 form-control ms-0" type="password" placeholder="Password">
+                                                <input class="input100 border-start-0 form-control ms-0" type="password" placeholder="Password" name="password" id="password">
                                             </div>
+                                            <span id="pass-err" style="color: red"></span>
                                             <div class="text-end pt-4">
                                                 <p class="mb-0"><a href="forgot-password.php" class="text-primary ms-1">Forgot Password?</a></p>
                                             </div>
                                             <div class="container-login100-form-btn">
-                                                <a href="index.php" class="login100-form-btn btn-primary">
-                                                        Login
-                                                </a>
+                                                <input type="submit" class="login100-form-btn btn-primary" name="input" value="Login"> 
                                             </div>
                                             <div class="text-center pt-3">
                                                 <p class="text-dark mb-0">Not a member?<a href="register.php" class="text-primary ms-1">Sign UP</a></p>
@@ -153,6 +154,42 @@
     <!-- CUSTOM JS -->
     <script src="../../assets/js/custom.js"></script>
 
+    <script>
+        $(function () {
+            $('#form-master').submit(function (e) { 
+                e.preventDefault();
+                let serial = $('#form-master').serialize() + '&action=logUser'
+                if ($('#email').val === '') {
+                    $('#email-err').text('email cannot be Empty*')
+                }else{
+                    if ($('#password').val === '') {
+                        $('#pass-err').text('email cannot be Empty*')
+                    }else{
+                        $.ajax({
+                            type: "POST",
+                            url: "../php/login-register.php",
+                            data: serial,
+                            success: function (response) {
+                                console.log(response);
+                                if (response === 'User not Found') 
+                                {
+                                    $('#all-err').text('User not Found*')
+                                }else if(response === 'Password does not exist')
+                                {
+                                     $('#pass-err').text('Password does not exist*')
+                                }else if(response === 'verified')
+                                 {
+                                    window.location = 'index'
+                                }  else{
+                                    $('#all-err').text('Please enter Details*')
+                                }    
+                                
+                            }
+                        });
+                    }
+                }
+            });
+        });
+    </script>
 </body>
-
 </html>

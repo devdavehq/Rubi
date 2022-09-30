@@ -1,3 +1,8 @@
+<?php
+// session_start();
+   include_once '../php/view.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
