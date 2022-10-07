@@ -70,3 +70,6 @@
 <script src="../../assets/js/custom.js"></script>
 
 <script src="../../assets/js/widget.js"></script>
+
+<script src="../../assets/js/sweet.js"></script>
+<script src="../../assets/js/sweet-alert.js"></script>

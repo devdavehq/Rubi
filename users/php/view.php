@@ -8,7 +8,8 @@
     {
         header('location: login.php');
     }
-
+    $output = '';
+    
     $sessionEmail = $_SESSION['Account'];
     $grabuser = $user->CaptureUser($sessionEmail);
 

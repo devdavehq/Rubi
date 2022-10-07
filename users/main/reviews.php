@@ -45,54 +45,35 @@
 
 <!-- JQUERY JS -->
 <?php include_once  'includes/footer.php'; ?>
-</body>
 <script>
-    $(function() {
-        $('#review').submit(function(e) {
-            e.preventDefault();
-            if ($('#rev').val() === '') {
-                $('#rev-err').text('Please Leave a Review First*')
-            } else {
-                $.ajax({
-                    type: "POST",
-                    url: "../php/userscode.php",
-                    data: $('#review').serialize() + "&action=leaveReview",
-                    success: function(response) {
-                        console.log(response)
-                        Swal.fire({
-                            icon: 'success',
-                            text: 'Thank You For Leaving A review',
-                            title: '<?= $grabuser['username']; ?>'
-
-                        }).then(() => {
-                            GetReviews('#reviews')
-                            // $('#postedQue').html(response)
-                            // $('#reviews')[0].reset()
-                        })
-
-                    }
-                });
-            }
-        });
-
-        GetReviews('#reviews')
-
-
-        function GetReviews(insert){
+     $('#review').submit(function(e) {
+        e.preventDefault();
+        if ($('#rev').val() === '') {
+            $('#rev-err').text('Please Leave a Review First*')
+        } else {
             $.ajax({
                 type: "POST",
                 url: "../php/userscode.php",
-                data: {
-                    action: 'getrev'
-                },
+                data: $('#review').serialize() + "&action=leaveReview",
                 success: function(response) {
-                    $(insert).html(response)
+                    console.log(response)
+                    Swal.fire({
+                        icon: 'success',
+                        text: 'Thank You For Leaving A review',
+                        title: '<?= $grabuser['username']; ?>'
+
+                    }).then(() => {
+                        GetReviews('#reviews')
+                        // $('#postedQue').html(response)
+                        // $('#reviews')[0].reset()
+                    })
+
                 }
             });
         }
-
-
     });
 </script>
+<script src="../js/reviews.js"></script>
+</body>
 
 </html>

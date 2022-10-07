@@ -22,7 +22,7 @@
             {
                 $hashp = password_hash($password, PASSWORD_DEFAULT);
 
-                $target = 'images/';
+                $target = '../../media/images/';
                 if (file_exists($target) && is_dir($target)) {
                     $path = $target.$file;
                     move_uploaded_file($_FILES['upload']['tmp_name'], $path);
@@ -61,3 +61,4 @@
             }
        
    }
+   ?>

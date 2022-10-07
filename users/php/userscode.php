@@ -3,7 +3,6 @@
 include_once 'view.php';
 
     
-    $output = '';
     if (isset($_POST['action']) && $_POST['action'] === 'createQue') 
     {
        $questions =$user->validateInputs($_POST['questions']);

@@ -1,3 +1,13 @@
+<?php
+    include_once "../php/view.php";
+    
+    if (!isset($_SESSION['Account'])) 
+    {
+        header('location: login.php');
+
+        // echo 'Please Register';
+    }
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 

@@ -1,3 +1,6 @@
+<?php
+    include_once '../php/view.php';
+?>
 <!doctype html>
 <html lang="en" dir="ltr">
 
@@ -55,23 +58,29 @@
                     </div>
                 </div>
                 <!-- CONTAINER OPEN -->
-                <div class="container-login100">
+                <div class="container-login100" id="logbx">
                     <div class="wrap-login100 p-6">
-                        <form class="login100-form validate-form">
+                        <form class="login100-form validate-form" id="form-master" method="POST">
                             <div class="text-center mb-4">
                                 <img src="../../assets/images/users/21.jpg" alt="lockscreen image" class="avatar avatar-xxl brround mb-2">
                                 <h4>Become A Creator</h4>
                             </div>
-                            <div class="wrap-input100 validate-input input-group" id="Password-toggle" data-bs-validate="Password is required">
+                            <span id="all-err" class="text-danger"></span>
+                            <div class="wrap-input100 validate-input input-group" data-bs-validate="Email is required">
                                 <a href="javascript:void(0)" class="input-group-text bg-white text-muted">
-                                    <i class="zmdi zmdi-eye" aria-hidden="true"></i>
+                                    <i class="fa fa-envelope" aria-hidden="true"></i>
                                 </a>
-                                <input class="input100 border-start-0 ms-0 form-control" type="email" placeholder="Enter email">
+
+                                <input class="input100 border-start-0 ms-0 form-control" name="verify" type="email" placeholder="Enter email" id="email">
                             </div>
                             <div class="container-login100-form-btn pt-0">
-                                <input type="submit" class="login100-form-btn btn-primary" value="Verify">					
+                                <?php if(!isset($_SESSION['Account'])) : ?>
+                                    <input type="submit" name="Submit" class="login100-form-btn btn-primary" value="Create Channel">
+                                    <?php else : ?>
+                                        <input type="submit" name="update" class="login100-form-btn btn-primary" value="Verify" id="verifyChannel">
+                                <?php endif; ?>
                             </div>
-                        
+
                             <label class="login-social-icon"><span>OR</span></label>
                             <div class="d-flex justify-content-center">
                                 <a href="javascript:void(0)">
@@ -107,7 +116,8 @@
     <!-- BOOTSTRAP JS -->
     <script src="../../assets/plugins/bootstrap/js/popper.min.js"></script>
     <script src="../../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-
+    <script src="../../assets/js/sweet.js"></script>
+    <script src="../../assets/js/sweet-alert.js"></script>
     <!-- SHOW PASSWORD JS -->
     <script src="../../assets/js/show-password.min.js"></script>
 
@@ -119,7 +129,80 @@
 
     <!-- CUSTOM JS -->
     <script src="../../assets/js/custom.js"></script>
+    <script>
+        $(function() {
+            $('#form-master').submit(e => {
+                e.preventDefault()
+                let arrange = $('#form-master').serialize() + "&action=BecomeCreator"
+                if ($('#email').val() === '') {
+                    $('#all-err').text('Email cannot be empty*')
+                } else {
+                    $.ajax({
+                        type: "POST",
+                        url: "../php/creatorverify.php",
+                        data: arrange,
+                        success: function(response) {
+                            if (response === 'Verified') {
+                                    window.location = 'index'
+                                 console.log(response);
+                            } else {
+                                $('#all-err').text(response)
+                                console.log(response);
+                            }
+                        }
+                    });
+                }
+            })
 
+            $('#verifyChannel').click(e => {
+                e.preventDefault()
+                let arrange = $('#form-master').serialize() + "&action=VerifyCreator"
+                if ($('#email').val() === '') {
+                    $('#all-err').text('Email cannot be empty*')
+                } else {
+                    $.ajax({
+                        type: "POST",
+                        url: "../php/creatorverify.php",
+                        data: arrange,
+                        success: function(response) {
+                            if (response === 'Verified') {
+                                checkLogged($('#email').val())
+                            } else {
+                                $('#all-err').text(response)
+                                console.log(response);
+                            }
+                        }
+                    });
+                }
+            })
+
+             
+
+            function checkLogged(value) { 
+                $.ajax({
+                    type: "POST",
+                    url: "../php/creatorverify.php",
+                    data: {action : 'checkedLogged'},
+                    success: function (response) {
+                        if (response === 'Right') {
+                            // window.location = 'index'
+                            $('#logbx').css({display: 'none'})
+                            Swal.fire({
+                                    icon: 'success',
+                                    text: 'Welcome back  '+value,
+                                    title: 'Welcome'
+
+                                }).then(() => {
+                                    window.location = 'index'
+                                })
+                        }else{
+                            $('#all-err').text("Please Login")
+                        }
+                    }
+                });
+             }
+
+        });
+    </script>
 </body>
-
 </html>

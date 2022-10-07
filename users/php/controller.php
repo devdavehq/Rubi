@@ -156,11 +156,61 @@ class Controller extends Database
     }
 
 
+    public function InsertSearch($uid, $userid, $search)
+    {
+        $sql = "INSERT INTO `search`(`uid`, `userid`, `search`) VALUES (:uid, :userid, :search)";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute([
+            'uid' => $uid, 
+            'userid' => $userid, 
+            'search' => $search
+        ]);
+        return true;
+    }
 
+    public function FetchChannel($value)
+    {
+        $sql = 'SELECT * FROM `channels` WHERE channel_name LIKE %:value%';
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute(['channel_name'=> $value]);
+        $fetchSearch = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $fetchSearch;
+    }
 
+    public function FetchVideos($value)
+    {
+        $sql = "SELECT * FROM `posts` WHERE title LIKE '%$value%'";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        $fetchSearch = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $fetchSearch;
+    }
 
+    public function FetchAllVideos()
+    {
+        $sql = 'SELECT * FROM `posts`';
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        $fetchSearch = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $fetchSearch;
+    }
 
+    public function FetchCat()
+    {
+        $sql = "SELECT * FROM `posts`";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        $fetchCat = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $fetchCat;
+    }
 
-
+    public function FetchSearch($value)
+    {
+        $sql = "SELECT * FROM `search` WHERE userid='$value'";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        $search = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $search;
+    }
 
 } 

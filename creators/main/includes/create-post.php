@@ -13,18 +13,24 @@
                         <div class="col-md-6">
                               <label for="" class="form-label">Title</label>
                               <input type="text" name="" id="" class="form-control creators-form" placeholder="Enter Title">
-                              <small id="helpId" class="text-muted">Help text</small> 
+                              <small id="title-err" class="text-muted">Help text</small> 
                         </div>
                         <div class="col-md-6">
                               <label for="" class="form-label">Upload video</label>
                               <input type="file" class="form-control creators-form" name="" id="" placeholder="Choose file">
-                              <small id="fileHelpId" class="form-text">Help text</small>
+                              <small id="vid-err" class="form-text">Help text</small>
                         </div>
 
                         <div class="col-md-6">
                               <label for="" class="form-label">Upload Thumbnail</label>
                               <input type="file" class="form-control creators-form" name="" id="" placeholder="Choose file">
-                              <small id="fileHelpId" class="form-text">Help text</small>
+                              <small id="file-err" class="form-text">Help text</small>
+                        </div>
+
+                        <div class="col-md-6">
+                              <label for="" class="form-label">Category</label>
+                              <input type="text" class="form-control creators-form" name="" id="" placeholder="Type Category">
+                              <small id="cat-err" class="form-text">Help text</small>
                         </div>
 
                         <div class="col-md-6">
@@ -32,7 +38,7 @@
                           <textarea class="form-control creators-form" name="" id="" rows="3" value='Enter code'></textarea> 
                         </div>
                     
-                        <div class="col-md-12">
+                        <div class="col-md-6">
                             <label for="" class="form-label">Description(optional)</label>
                           <textarea class="form-control creators-form" name="" id="" rows="3" value='Enter code'></textarea> 
                         </div>

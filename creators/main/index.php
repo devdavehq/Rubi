@@ -12,7 +12,7 @@
         <div class="main-content app-content mt-0">
             <div class="side-app">
                 <!-- PAGE-HEADER END -->
-                <div class="page-header mt-7">
+                <div class="page-header mt-8">
                     <h1 class="page-title">Dashboard</h1>
                 </div>
                 <!-- VIDEOS -->
@@ -102,7 +102,7 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Posts</h3>
+                                <h3 class="card-title">POSTS</h3>
                             </div>
                             <div class="card-body">
                                 <button id="" class="btn btn-primary mb-4" style="float: right;" data-bs-toggle="modal" data-bs-target="#extralargemodal">create post</button>

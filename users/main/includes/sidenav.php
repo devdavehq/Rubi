@@ -35,7 +35,7 @@
                                     <i class="side-menu__icon fa fa-map-o"></i>
                                         <span class="side-menu__label">Explore</span>
                                 </a>
-                                <a class="side-menu__item has-link" data-bs-toggle="slide" href="../../../creators/main/index.php">
+                                <a class="side-menu__item has-link" data-bs-toggle="slide" href="../../creators/main/login.php">
                                     <i class="side-menu__icon fa fa-cubes"></i>
                                         <span class="side-menu__label">Creators</span>
                                     </a>

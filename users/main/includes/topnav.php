@@ -143,7 +143,7 @@
                                         <div class="dropdown d-flex profile-1">
                                             <a href="javascript:void(0)" data-bs-toggle="dropdown"
                                                 class="nav-link leading-none d-flex">
-                                                <img src="../php/images/<?= $grabuser['upload']; ?>" alt="profile-user"
+                                                <img src="<?= $grabuser['filename']; ?>" alt="profile-user"
                                                     class="avatar profile-user brround cover-image" />
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
@@ -159,9 +159,11 @@
                                                 <!-- <a class="dropdown-item" href="profile.php">
                                                     <i class="dropdown-icon fe fe-user"></i> Profile
                                                 </a> -->
-                                                <a class="dropdown-item" href="../../creators/main/login.php">
-                                                    <i class="dropdown-icon fa fa-qq"></i> channel
-                                                </a>
+                                                <?php if(isset($_SESSION['Account'])) : ?>
+                                                    <a class="dropdown-item" href="../../creators/main/index.php">
+                                                        <i class="dropdown-icon fa fa-qq"></i> channel
+                                                    </a>
+                                                <?php endif; ?>
                                                 <!-- <a class="dropdown-item" href="lockscreen.php">
                                                     <i class="dropdown-icon fe fe-lock"></i> Lockscreen
                                                 </a> -->
