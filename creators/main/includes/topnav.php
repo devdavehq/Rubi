@@ -155,11 +155,22 @@
                                                             <small class="text-muted"><?= $grabuser['uniId'] ?></small>
                                                         </div>
                                                     </div>
-                                                    <div class="dropdown-divider m-0"></div>
+                                                    <?php if(!isset($_SESSION['Account'])) : ?>
+                                                    <a class="dropdown-item" href="../../users/main/login.php">
+                                                    <i class="dropdown-icon fa fa-cube"></i>
+                                                            Explore
+                                                    </a>
+                                                    <?php else : ?>
+                                                        <a class="dropdown-item" href="../../users/main/index.php">
+                                                        <i class="dropdown-icon fa fa-cube"></i>
+                                                            Explore
+                                                        </a>
+                                                <?php endif; ?>
+                                                    <!-- <div class="dropdown-divider m-0"></div>
                                                         <a class="dropdown-item" href="../../users/main/index.php">
                                                             <i class="dropdown-icon fa fa-cube"></i>
                                                             Explore
-                                                     </a>
+                                                     </a> -->
                                             </div>
                                         </div>
                                     </div>

@@ -70,3 +70,40 @@
 
 <!-- CUSTOM JS -->
 <script src="../../assets/js/custom.js"></script>
+
+<script>
+    $(function () {
+        
+        
+    FetchNotifiedSubs()
+    function FetchNotifiedSubs() {
+        $.ajax({
+            type: "POST",
+            url: "../php/subscription.php",
+            data: {action : 'FetchNotifiedSubs'},
+            success: function (response) {
+                if (response === 'No subscriptions yet') {
+                    console.log(response);
+                    $('#noted').append('')
+                    $('#notified').html(response)
+                }else{
+                    $('#noted').append('<span class="pulse"></span>')
+                    $('#notified').html(response)
+                }
+            }
+        });
+    }
+
+
+    $('body').on("click", ".notificate", e=>{
+            e.preventDefault()
+             let data = e.currentTarget
+             let Notify = $(data).attr('id')
+             if (Notify) {
+                $('#noted').append('')
+                console.log(Notify);
+                // FetchNotifiedSubs()
+             }
+        })
+    });
+</script>

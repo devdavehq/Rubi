@@ -22,7 +22,7 @@ if (isset($_POST['action']) && $_POST['action'] === 'BecomeCreator') :
         
         if ($insertCreator != null) :
             echo 'Verified';
-            $_SESSION['Account'] = $email;
+            $_SESSION['Creators'] = $email;
         else :
             echo 'No account found';
         endif;
@@ -41,7 +41,7 @@ if (isset($_POST['action']) && $_POST['action'] === 'VerifyCreator') :
 
     if($verifyCreator && $verifyCreator != null) : 
         echo 'Verified';
-        $_SESSION['Account'] = $email;
+        $_SESSION['Creators'] = $email;
      else :
         echo 'No account found';
     endif;
@@ -53,7 +53,7 @@ endif;
 
 if(isset($_POST['action']) && $_POST['action'] === 'checkedLogged') :
 
-    if(isset($_SESSION['Account'])):
+    if(isset($_SESSION['Creators'])):
         echo 'Right';
     else:
         echo 'Wrong';

@@ -8,7 +8,7 @@
     {
         
         $user = $createAcc->validateInputs($_POST['username']);
-        $uniqId = $user.uniqid();
+        $uniqId = '@'.$user.uniqid();
         $email = $createAcc->validateInputs($_POST['email']);
         $password = $createAcc->validateInputs($_POST['password']);
         $file = $createAcc->validateInputs($_FILES['upload']['name']);

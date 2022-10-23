@@ -74,7 +74,7 @@
                                 <input class="input100 border-start-0 ms-0 form-control" name="verify" type="email" placeholder="Enter email" id="email">
                             </div>
                             <div class="container-login100-form-btn pt-0">
-                                <?php if(!isset($_SESSION['Account'])) : ?>
+                                <?php if(!isset($_SESSION['Creators'])) : ?>
                                     <input type="submit" name="Submit" class="login100-form-btn btn-primary" value="Create Channel">
                                     <?php else : ?>
                                         <input type="submit" name="update" class="login100-form-btn btn-primary" value="Verify" id="verifyChannel">
@@ -173,7 +173,7 @@
                             }
                         }
                     });
-                }
+                 }
             })
 
              

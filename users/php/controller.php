@@ -170,16 +170,24 @@ class Controller extends Database
 
     public function FetchChannel($value)
     {
-        $sql = 'SELECT * FROM `channels` WHERE channel_name LIKE %:value%';
+        $sql = "SELECT * FROM `channels` WHERE channel_name LIKE '%".$value."%'";
         $stmt = $this->conn->prepare($sql);
-        $stmt->execute(['channel_name'=> $value]);
+        $stmt->execute();
         $fetchSearch = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $fetchSearch;
+    }
+    public function FetchChannelsubbed($value)
+    {
+        $sql = "SELECT * FROM `channels` WHERE channel_name LIKE '%".$value."%'";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        $fetchSearch = $stmt->fetch(PDO::FETCH_ASSOC);
         return $fetchSearch;
     }
 
     public function FetchVideos($value)
     {
-        $sql = "SELECT * FROM `posts` WHERE title LIKE '%$value%'";
+        $sql = "SELECT * FROM `posts` WHERE title LIKE '%".$value."%'";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
         $fetchSearch = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -192,6 +200,16 @@ class Controller extends Database
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
         $fetchSearch = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $fetchSearch;
+    }
+
+
+    public function FetchAllChannels()
+    {
+        $sql = 'SELECT * FROM `channels`';
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        $fetchSearch = $stmt->fetch(PDO::FETCH_ASSOC);
         return $fetchSearch;
     }
 
@@ -213,4 +231,82 @@ class Controller extends Database
         return $search;
     }
 
+    public function FetchSubscribedChannel($channelid)
+    {
+        $sql = "SELECT * FROM `channels` WHERE channel_id='$channelid'";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        $fetchsubscribedChannel = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $fetchsubscribedChannel;
+    }
+    
+    public function UserSubscribe($cid, $cname, $channel_image, $subscribers, $verified ,$sid, $sname, $status)
+    {
+        $sql = "INSERT INTO `subscriptions`(`channel_id`, `channel_name`,`channel_image`, `subscribers`, `verified`, `subscriber_id`, `subscriber_name`, `status`) 
+        VALUES (:cid, :cname, :channel_image, :subscribers, :verified , :sid, :sname, :status)";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute([
+            'cid' => $cid, 
+            'cname' => $cname, 
+            'channel_image' => $channel_image, 
+            'subscribers' => $subscribers, 
+            'verified' => $verified,
+            'subscriber_id' => $sid, 
+            'subscriber_name' => $sname, 
+            'status' => $status
+        ]);
+        return true;
+    }
+
+    public function VerifySubscribedChannel($sid,$status)
+    {
+        $sql = "SELECT * FROM `subscriptions` WHERE subscriber_id='$sid' AND status='$status'";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        $VerifysubscribedChannel = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $VerifysubscribedChannel;
+    }
+
+    public function GetSubbedChannel($sid,$status)
+    {
+        $sql = "SELECT * FROM `subscriptions` WHERE subscriber_id='$sid' AND status='$status'";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        $VerifysubscribedChannel = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $VerifysubscribedChannel;
+    }
+
+
+    public function GrabSubs($cid,$status)
+    {
+        $sql = "SELECT * FROM `subscriptions` WHERE channel_id='$cid' AND status='$status'";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        $VerifysubscribedChannel = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $VerifysubscribedChannel;
+    }
+
+    public function InsertSubs($cid,$subs)
+    {
+        $sql = "UPDATE `channels` SET `subscribers`='$subs' WHERE channel_id='$cid'";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        // return true;
+        if($stmt):
+            $sql = "UPDATE `subscriptions` SET `subscribers`='$subs' WHERE channel_id='$cid'";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute();  
+         endif;
+     return true;
+    }
+
+    public function fetchChannelsubs($sid)
+    {
+        $sql = "SELECT * FROM `channels` WHERE channel_id=$sid";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        $fetchVerifysubscribedChannel = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $fetchVerifysubscribedChannel;
+    }
+    // UPDATE `subscriptions` SET `id`='[value-1]',`channel_id`='[value-2]',`channel_name`='[value-3]',`channel_image`='[value-4]',`subscribers`='[value-5]',`verified`='[value-6]',`subscriber_id`='[value-7]',`subscriber_name`='[value-8]',`status`='[value-9]',`datesubscribed`='[value-10]' WHER
 } 

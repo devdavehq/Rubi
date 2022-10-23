@@ -2,12 +2,13 @@
 
 include_once 'view.php';
 
-if (isset($_POST['action']) && $_POST['action'] === 'FetchReadyPosts') {
+if (isset($_POST['action']) && $_POST['action'] === 'FetchReadyPosts') 
+{
 
     $fetchVideos = $user->FetchAllVideos();
     if ($fetchVideos && !empty($fetchVideos)) {
         foreach ($fetchVideos as $fetchVideo) {
-            if (empty($fetchVideo[''])) {
+            if (empty($fetchVideo['codes'])) {
                 $codes = 'code Unavaliable';
             } else {
                 $codes = 'code avaliable';
@@ -43,7 +44,62 @@ if (isset($_POST['action']) && $_POST['action'] === 'FetchReadyPosts') {
     }
 }
 
-if (isset($_POST['gtnval'])) {
+// fetch videos recommended from search
+if (isset($_POST['action']) && $_POST['action'] === 'FetchSearchedPosts') :
+
+    $FetchSearch =$user->FetchSearch($grabuser['uniId']);
+    $fetchVideos = $user->FetchVideos($FetchSearch['search']);
+    if ($fetchVideos && !empty($fetchVideos)) :
+         foreach ($fetchVideos as $fetchVideo) :
+                if (empty($fetchVideo['codes'])) {
+                    $codes = 'code Unavaliable';
+                } else {
+                    $codes = 'code avaliable';
+                }
+                $output .= '
+                <div class="col-xl-3 col-md-6">
+                <div class="card">
+                    <img class="card-img-top" src="' . $fetchVideo['thumbnail'] . '" alt="Title">
+                    <div class="card-body">
+                        <h4 class="card-title text-light">' . $fetchVideo['title'] . '</h4>
+                
+                        <div class="d-flex">
+                            <img src="' . $fetchVideo['channel_img'] . '" alt="" class="rounded" width="40px" height="40px">
+                            <a href="explore.php?video=' . $fetchVideo['channelid'] . '" class="text-light mt-3 creator">' . $fetchVideo['channelid'] . '</a>
+                        </div>
+                        <a  href="explore.php?video=' . $fetchVideo['id'] . '" class="card-title btn btn-primary mt-2 increase" data-bs-toggle="modal" data-bs-target="#extralargemodal">
+                            Watch now
+                        </a>
+                    </div>
+                    <div class="card-footer">
+                        <div class="d-flex codeAvail">
+                            2 min ago
+                        <div class="text-center text-light bg-primary font">' . $codes . '</div>
+                    </div>
+                    </div>
+                </div>
+            </div>';
+        endforeach;
+        echo $output;
+    else :
+        $output = '<h3 class="text-primary">No videos for you here</h3>';
+        echo $output;
+    endif;
+
+endif;
+
+
+
+
+
+
+
+
+
+
+
+if (isset($_POST['gtnval'])) 
+{
     $value = $_POST['gtnval'];
 
     $datas = $user->FetchVideos($value);

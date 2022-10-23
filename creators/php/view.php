@@ -7,7 +7,8 @@
     if(isset($_SESSION['Account'])) :
    
         $output = '';
-        
+        $subs = '';
+        $verified = '';
         $sessionEmail = $_SESSION['Account'];
         $grabuser = $Creators->CaptureUser($sessionEmail);
 

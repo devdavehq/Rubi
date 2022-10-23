@@ -1,6 +1,7 @@
 $(function () {
-    // window.addEventListener('load', ()=>{
+   
         FetchReadyPosts('#AllVideos')
+        FetchSearchedPosts()
 
         function FetchReadyPosts(insert) {
             $.ajax({
@@ -16,8 +17,24 @@ $(function () {
                 }
             });
         }
+
+
+        function FetchSearchedPosts() {
+            $.ajax({
+                type: "POST",
+                url: "../php/indexcode.php",
+                data: {
+                    action: 'FetchSearchedPosts'
+                },
+                success: function(response) {
+                    console.log(response);
+                    $('#AllVideos').append(response)
+                    FetchTags('#Gettags') 
+                }
+            });
+        }
         
-    // })
+    
     $('.recent').click(e=>{
         // $('.recent').removeClass('activetags')
         let gtnval = e.currentTarget.innerHTML
@@ -25,6 +42,7 @@ $(function () {
 
         if (gtnval == 'All') {
             FetchReadyPosts('#AllVideos')
+            FetchSearchedPosts()
         }else{
             $.ajax({
                 type: "POST",

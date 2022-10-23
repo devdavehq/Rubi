@@ -111,8 +111,8 @@
                                         </div>
                                        <!-- following -->
                                         <div class="dropdown d-flex notifications overflow-visible">
-                                            <a class="nav-link icon" data-bs-toggle="dropdown"><i
-                                                    class="fa fa-heart"></i><span class="pulse"></span>
+                                            <a class="nav-link icon" data-bs-toggle="dropdown" id="noted">
+                                                <i class="fa fa-heart"></i>
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                                                 <div class="drop-heading border-bottom">
@@ -122,22 +122,11 @@
                                                         </h6>
                                                     </div>
                                                 </div>
-                                                <div class="notifications-menu">
-                                                    <a class="dropdown-item d-flex" href="notify-list.php">
-        
-                                                            <img src="../../others/rubyimgs/dell-LXI5kqCdEcE-unsplash.jpg" class="img-fluid" style='width:40px;
-                                                             height:40px;border-radius:50px';
-                                                            >
-                                                        <!-- </div> -->
-                                                        <div class="mt-1 wd-80p">
-                                                            <h5 class="notification-label mb-1">
-                                                                New Application received
-                                                            </h5>
-                                                            <span class="notification-subtext">3 days ago</span>
-                                                        </div>
-                                                    </a>
+                                                <div class="notifications-menu" id="notified">
+                                                   
                                                
                                                 </div>
+                                                
                                             </div>
                                         </div
                                         <div class="dropdown d-flex profile-1">
@@ -159,10 +148,14 @@
                                                 <!-- <a class="dropdown-item" href="profile.php">
                                                     <i class="dropdown-icon fe fe-user"></i> Profile
                                                 </a> -->
-                                                <?php if(isset($_SESSION['Account'])) : ?>
-                                                    <a class="dropdown-item" href="../../creators/main/index.php">
+                                                <?php if(!isset($_SESSION['Creators'])) : ?>
+                                                    <a class="dropdown-item" href="../../creators/main/login.php">
                                                         <i class="dropdown-icon fa fa-qq"></i> channel
                                                     </a>
+                                                    <?php else : ?>
+                                                        <a class="dropdown-item" href="../../creators/main/index.php">
+                                                            <i class="dropdown-icon fa fa-qq"></i> channel
+                                                        </a>
                                                 <?php endif; ?>
                                                 <!-- <a class="dropdown-item" href="lockscreen.php">
                                                     <i class="dropdown-icon fe fe-lock"></i> Lockscreen

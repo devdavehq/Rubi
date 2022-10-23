@@ -10,6 +10,9 @@
             <div class="modal-body">
                 <form action="" method="post" enctype="multipart/form-data">
                     <div class="row">
+                        
+                              <input type="text" name="id" id="" class="form-control creators-form" placeholder="" hidden>
+                        
                         <div class="col-md-6">
                               <label for="" class="form-label">Title</label>
                               <input type="text" name="" id="" class="form-control creators-form" placeholder="Enter Title">
@@ -45,6 +48,7 @@
                     </div>
                     <div class="col-md-12 mt-2">
                         <input type="submit" class="btn btn-primary form-control creators-form" value="Create New post">
+                        <input type="submit" class="btn btn-primary form-control creators-form d-none" value="Edit Post">
                     </div>
                 </form>
             </div>
